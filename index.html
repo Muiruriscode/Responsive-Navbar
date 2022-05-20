@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="unordered">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="small">
+      <nav class="navbar-small">
+        <ul class="unordered-small">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="toggle" onclick="clickedButton()">X</button>
+    </div>
+
+    <script>
+      clickedButton = () => {
+        let toggleButton = document.querySelector(".toggle");
+        let navbar = document.querySelector(".navbar-small");
+        let small = document.querySelector(".small");
+        console.log(small);
+
+        if (toggleButton.innerHTML === "X") {
+          toggleButton.innerHTML = "+";
+          navbar.style.display = "none";
+          small.style.backgroundColor = "transparent";
+          small.style.justifyContent = "flex-end";
+        } else {
+          toggleButton.innerHTML = "X";
+          navbar.style.display = "block";
+          small.style.backgroundColor = "rgb(3, 67, 126)";
+          small.style.justifyContent = "space-between";
+        }
+      };
+    </script>
+  </body>
+</html>
